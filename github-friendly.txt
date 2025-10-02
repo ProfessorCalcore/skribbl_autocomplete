@@ -1,0 +1,419 @@
+//CLOUDY-EYELASH SCRIPT
+
+let userName = "";
+
+let cloudyTime;
+let currentTime;
+let previousTime;
+
+const textBox = document.createElement("label");
+document.body.appendChild(textBox);
+textBox.style.position = "absolute";
+textBox.style.top = "4%";
+textBox.style.left = "40%";
+textBox.style.color = "white";
+textBox.style.backgroundColor = "blue";
+textBox.style.fontSize = "50px";
+
+const textBox2 = document.createElement("label");
+document.body.appendChild(textBox2);
+
+textBox2.style.position = "absolute";
+textBox2.style.top = "3%";
+textBox2.style.left = "70%";
+textBox2.style.color = "white";
+textBox2.style.backgroundColor = "blue";
+textBox2.style.fontSize = "32px";
+
+
+document.addEventListener("keydown", function(event) {
+    if(event.key === "h") {
+        navigator.clipboard.writeText("i cloudy! You joined at " + cloudyTime.toLocaleTimeString());
+    }
+});
+
+const chatBox = document.querySelector(".chat-content");
+
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        mutation.addedNodes.forEach(function(node) {
+            if(node.textContent.includes("eyelash joined the room!")) {
+                alert("Eyelash has joined the room!");
+            }
+
+            if(node.textContent.includes("eyelash has left the room!")) {
+                alert("Eyelash has left the room!");
+            }
+
+            else if(node.textContent.includes("🌧 joined the room!")) {
+ 		cloudyTime = new Date();
+
+                alert("🌧 has joined the room!");
+            }
+
+            else if(node.textContent.includes("🌨 joined the room!")) {
+ 		cloudyTime = new Date();
+
+                alert("🌨 has joined the room!");
+            }
+
+
+ 	    else if(node.textContent.includes("guessed the word")) {
+ 		currentTime = new Date();
+ 		let timeStamp = currentTime.getSeconds() + "." + currentTime.getMilliseconds();
+ 		console.log(node.textContent + "   " + timeStamp)
+
+ 		}
+
+ 	    else if(node.textContent.includes("is close!")) {
+ 		console.log(node.textContent);
+ 		textBox.style.backgroundColor = "#ffd905";
+ 		textBox.textContent = node.textContent
+
+ 		}
+
+ 	   else if(node.textContent.includes(userName + ":")) {
+ 		console.log(node.textContent);
+ 		textBox.style.backgroundColor = "blue";
+ 		textBox.textContent = node.textContent;
+
+ 		}
+
+ 	    if(node.textContent.includes("Mr Red"+ ":")) {
+ 		console.log(node.textContent);
+ 		textBox.style.backgroundColor = "red";
+ 		textBox.textContent = node.textContent;
+
+ 		}
+
+ 	   if(node.textContent.includes("eyelash"+ ":")) {
+ 		console.log(node.textContent);
+ 		textBox.style.backgroundColor = "purple";
+ 		textBox.textContent = node.textContent;
+
+ 		}
+
+
+ 	   if(node.textContent.includes("Mr Red guessed the word!")) {
+ 		console.log(node.textContent);
+ 		textBox.style.backgroundColor = "lime";
+ 		textBox.textContent = node.textContent;
+
+
+ 		}
+
+ 	   if(node.textContent.includes("is voting to kick")) {
+ 		console.log(node.textContent);
+ 		textBox.style.backgroundColor = "orange";
+ 		textBox.textContent = node.textContent;
+
+
+ 		}
+
+
+
+ 	   if(node.textContent.includes("Spam detected!")) {
+ 		console.log(node.textContent);
+ 		textBox2.style.backgroundColor = "orange";
+ 		textBox2.textContent = "!WARNING SLOW DOWN BEFORE YOU GET KICKED!";
+ 		setTimeout(function() {
+ 			textBox2.textContent = "";
+
+ 		},1500);
+
+
+ 		}
+
+
+
+
+
+
+
+
+
+
+        });
+    });
+});
+
+observer.observe(chatBox, {childList: true, subtree: true});
+
+////////////////////////////////////////////////////////////////
+
+//SHORTCUP KEYS FOR SKRIBBL.IO
+
+let keyPressed = "";
+
+let labelBox = document.createElement("label");
+document.body.appendChild(labelBox);
+labelBox.style.position = "absolute";
+labelBox.style.left = "40%";
+labelBox.style.top = "5px";
+labelBox.style.backgroundColor = "blue";
+labelBox.style.color = "white";
+
+document.addEventListener("keydown", function(event) {
+  keyPressed += event.key;
+  if(keyPressed.endsWith("ab")) {
+    navigator.clipboard.writeText("raham lincoln");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("co")) {
+    navigator.clipboard.writeText("rn on the cob");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("fr")) {
+    navigator.clipboard.writeText("iendship bracelet");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("ge")) {
+    navigator.clipboard.writeText("orge washington");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("le")) {
+    navigator.clipboard.writeText("onardo dicaprio");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("Le")) {
+    navigator.clipboard.writeText("onardo da vinci");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("ma")) {
+    navigator.clipboard.writeText("rk zuckerberg");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("ni")) {
+    navigator.clipboard.writeText("ntendo switch");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("sy")) {
+    navigator.clipboard.writeText("dney opera house");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("vl")) {
+    navigator.clipboard.writeText("adimir putin");
+    keyPressed = "";
+  }
+
+
+  else if(keyPressed.endsWith("wi")) {
+    navigator.clipboard.writeText("lliam shakespeare");
+    keyPressed = "";
+  }
+
+
+
+
+
+});
+})();
+
+////////////////////shortcups//////////////////////
+const suggestions = document.createElement("div");
+document.body.appendChild(suggestions);
+suggestions.style.position = "absolute";
+suggestions.style.top = "68%";
+suggestions.style.left = "63%";
+suggestions.style.backgroundColor = "white";
+
+let typedKeys = "";
+let count = 0;
+
+
+let list = ["procrastination","multiplication","advertisement","archaeologist","brachiosaurus","constellation","defibrillator","demonstration","reincarnation","cheeseburger","construction","conversation","flamethrower","frankenstein","handkerchief","intersection","kindergarten","neighborhood","notification","photographer","receptionist","relationship","skateboarder","sledgehammer","thunderstorm","velociraptor","veterinarian","agriculture","bulletproof","caterpillar","cauliflower","cheerleader","comfortable","coronavirus","countryside","electrician","electricity","environment","executioner","fingerprint","firecracker","firefighter","gingerbread","grandfather","grandmother","grasshopper","gravedigger","hairdresser","highlighter","hummingbird","imagination","marshmallow","mathematics","Minesweeper","motherboard","netherlands","observatory","oktoberfest","paragliding","philippines","philosopher","playstation","pomegranate","Pterodactyl","quarterback","rattlesnake","renaissance","rollerblade","screwdriver","shakespeare","speedometer","stegosaurus","subtraction","supermarket","Switzerland","temperature","thermometer","triceratops","underground","underweight","uninhabited","ventilation","wheelbarrow","anglerfish", "antarctica", "apocalypse", "aristocrat", "atmosphere", "background", "basketball", "battleship", "binoculars", "blackberry", "blacksmith", "brainstorm", "breakdance", "bricklayer", "broomstick", "buttermilk", "calculator", "california", "cannonball", "capitalism", "cappuccino", "chalkboard", "chandelier", "cheesecake", "chestplate", "chimpanzee", "chinchilla", "chopsticks", "cinderella", "collarbone", "commercial", "conspiracy", "contrabass", "controller", "cuttlefish", "dictionary", "didgeridoo", "disgusting", "dishwasher", "downstairs", "earthquake", "elliptical", "experiment", "extinction", "fertilizer", "fettuccine", "fingernail", "flashlight", "floodlight", "foundation", "girlfriend", "goldilocks", "graduation", "gramophone", "grapefruit", "greenhouse", "guillotine", "gymnastics", "headphones", "helicopter", "hieroglyph", "hitchhiker", "hovercraft", "illuminati", "insulation", "invincible", "jackhammer", "laboratory", "leprechaun", "lighthouse", "lightsaber", "lumberjack", "madagascar", "markiplier", "mayonnaise", "medication", "microphone", "microscope", "motorcycle", "mozzarella", "nightlight", "nutcracker", "overweight", "pharmacist", "photograph", "plantation", "playground", "plexiglass", "programmer", "prosciutto", "protection", "protractor", "punishment", "quarantine", "quesadilla", "rainforest", "razorblade", "reflection", "republican", "restaurant", "rhinoceros", "roadrunner", "roundabout", "semicircle", "silverware", "skateboard", "skribbl.io", "skyscraper", "smartphone", "snowmobile", "Stonehenge", "strawberry", "sunglasses", "superpower", "tablecloth", "tambourine", "television", "Terminator", "toothbrush", "toothpaste", "trampoline", "translator", "tumbleweed", "typewriter", "university", "vegetarian", "volleyball", "washington", "watermelon", "weatherman", "wheelchair", "whiteboard", "windshield", "wonderland", "woodpecker", "abandoned","accordion","addiction","afterlife","afternoon","agreement","albatross",
+  "alchemist","alligator","ambulance","amsterdam","animation","antivirus","apartment",
+  "architect","argentina","armadillo","arthritis","artichoke","astronaut","asymmetry",
+  "Australia","autograph","avalanche","badminton","ballerina","barbarian","barcelona",
+  "bartender","beanstalk","beethoven","billiards","birdhouse","blindfold","blowtorch",
+  "blueberry","blueprint","bodyguard","bomberman","bookshelf","boomerang","boyfriend",
+  "brainwash","breakfast","broadcast","bulldozer","butterfly","cameraman","capricorn",
+  "cardboard","carnivore","carpenter","casserole","castanets","cathedral","celebrate",
+  "celebrity","centipede","chameleon","champagne","chapstick","chemistry","chevrolet",
+  "chewbacca","chihuahua","chinatown","chocolate","christmas","cigarette","classroom",
+  "clickbait","clipboard","clownfish","cockroach","colosseum","commander","communism",
+  "community","concealer","condiment","conductor","continent","corkscrew","cornfield",
+  "countdown","cranberry","crocodile","croissant","crosswalk","dalmatian","dandelion",
+  "dashboard","delicious","deodorant","depressed","desperate","detective","detergent",
+  "direction","dispenser","dollhouse","dragonfly","emergency","escalator","evaporate",
+  "evolution","excalibur","excavator","exhausted","explosion","extravert","eyeshadow",
+  "filmmaker","fingertip","firehouse","fireplace","fireproof","fisherman","frostbite",
+  "furniture","generator","gentleman","geography","gladiator","glowstick","godfather",
+  "graveyard","greenland","groundhog","guacamole","gunpowder","hairbrush","hairspray",
+  "hamburger","handcuffs","handshake","handstand","harmonica","harvester","headboard",
+  "herbivore","hibernate","hilarious","hollywood","honeycomb","honeymoon","hopscotch",
+  "horseshoe","horsewhip","hourglass","hypnotize","incognito","indonesia","injection",
+  "Instagram","interview","introvert","invention","invisible","jellyfish","landscape",
+  "landslide","librarian","lightbulb","lightning","limousine","magnifier","mannequin",
+  "margarine","marmalade","mcdonalds","megaphone","merengues","meteorite","microsoft",
+  "microwave","milkshake","millipede","minecraft","mousetrap","newspaper","nightclub",
+  "nightmare","nosebleed","nunchucks","orangutan","orchestra","overwatch","paintball",
+  "paparazzi","paperclip","parachute","passenger","peninsula","pensioner","pepperoni",
+  "periscope","pewdiepie","photobomb","Photoshop","pineapple","pinocchio","pistachio",
+  "pitchfork","poisonous","policeman","pollution","porcupine","possessed","president",
+  "principal","professor","promotion","protester","quicksand","radiation","raspberry",
+  "reception","rectangle","recycling","roadblock","saltwater","sandstorm","satellite",
+  "saxophone","scarecrow","scientist","sculpture","shipwreck","sideburns","signature",
+  "Singapore","skydiving","sleepwalk","slingshot","snowboard","snowflake","snowstorm",
+  "socialism","spaceship","spaghetti","spartacus","speedboat","spelunker","spiderman",
+  "spongeBob","sprinkler","squidward","starbucks","starfruit","steampunk","stockings",
+  "stopwatch","streetcar","submarine","sunflower","surfboard","swordfish","tangerine",
+  "tarantula","telephone","telescope","teletubby","tombstone","toothpick","translate",
+  "trapezoid","treadmill","treehouse","underwear","vegetable","wallpaper","warehouse",
+  "wasteland","waterfall","whirlpool","wolverine","workplace","wrestling","xylophone",
+  "yardstick","zookeeper","aardvark","abstract","accident","addition","adorable","aircraft","airplane","alphabet",
+  "aluminum","anaconda","anteater","antelope","applause","aquarium","armchair","assassin",
+  "asterisk","asteroid","Atlantic","Atlantis","audience","bachelor","backbone","backflip",
+  "backpack","bagpipes","baguette","ballroom","bankrupt","barbecue","baseball","basement",
+  "bathrobe","bathroom","birdcage","birthday","blizzard","blowfish","bookmark","bracelet",
+  "Broadway","broccoli","brunette","building","bullseye","calamari","calendar","campfire",
+  "canister","cardinal","carnival","cassette","catapult","cauldron","cerberus","chainsaw",
+  "champion","checkers","chemical","chestnut","chipmunk","chlorine","cinnamon","clarinet",
+  "cocktail","colander","collapse","colombia","comedian","complete","composer","computer",
+  "concrete","conflict","confused","contrast","converge","crayfish","crescent","criminal",
+  "crossbow","crucible","cucumber","cupboard","currency","customer","cylinder","dandruff",
+  "daughter","daydream","deadpool","defender","delivery","democrat","detonate","diagonal",
+  "dinosaur","disabled","disagree","disaster","distance","division","doghouse","dominoes",
+  "doorknob","download","dressing","driveway","dumbbell","dumpling","dynamite","earmuffs",
+  "eggplant","einstein","election","elephant","elevator","employer","engineer","envelope",
+  "equation","espresso","exercise","explorer","eyeliner","eyepatch","fabulous","facebook",
+  "festival","figurine","fireball","fireside","firework","flagpole","flamingo","football",
+  "footrest","forehead","Fortnite","fortress","fountain","freckles","frosting","gangrene",
+  "gangster","gardener","Garfield","gasoline","godzilla","goldfish","graffiti","graphite",
+  "habanero","hairband","handicap","hazelnut","headache","headband","headbutt","hedgehog",
+  "hercules","homeless","hospital","impostor","industry","infinite","insomnia","internet",
+  "invasion","jalapeno","kangaroo","keyboard","Knuckles","kombucha","lacrosse","landfill",
+  "landlord","language","lavender","leggings","lemonade","levitate","licorice","lipstick",
+  "lollipop","macaroni","magazine","magician","majority","manicure","marathon","marigold",
+  "matchbox","mattress","meatball","meatloaf","mechanic","Mercedes","midnight","military",
+  "miniclip","minigolf","minority","minotaur","mosquito","mothball","mountain","mousepad",
+  "movement","murderer","mushroom","mustache","napoleon","necklace","negative","neighbor",
+  "nintendo","nitrogen","nostrils","notebook","nutshell","obsidian","olympics","ornament",
+  "overalls","overpass","pacifier","painting","pakistan","pandemic","panpipes","parakeet",
+  "parallel","Parmesan","passport","password","pavement","pedicure","pendulum","pentagon",
+  "pharmacy","pinwheel","plankton","platform","platypus","ponytail","popsicle","portrait",
+  "portugal","poseidon","positive","postcard","pregnant","princess","pringles","prisoner",
+  "question","railroad","raincoat","raindrop","rapunzel","recorder","redditor","redstone",
+  "reindeer","religion","reporter","revolver","ringtone","roadkill","rockstar","sailboat",
+  "sandwich","sapphire","sardines","savannah","scimitar","scissors","scorpion","Scotland",
+  "Scrabble","scribble","seahorse","seashell","security","shepherd","shoehorn","shoelace",
+  "shopping","shoulder","sidewalk","skeleton","Skittles","Skrillex","slippers","slippery",
+  "Slovakia","Snapchat","sneakers","snowball","sombrero","sparkles","squirrel","Sriracha",
+  "starfish","stingray","stocking","streamer","strength","stroller","suitcase","sunshade",
+  "sunshine","Superman","survivor","swelling","swimsuit","symmetry","symphony","tabletop",
+  "tapeworm","teaspoon","teenager","tentacle","terraria","thailand","theremin","tiramisu",
+  "tortilla","tortoise","trapdoor","traveler","treasure","triangle","tricycle","triplets",
+  "trombone","tropical","trousers","umbrella","unicycle","universe","upstairs","vacation",
+  "venomous","vertical","violence","vuvuzela","wardrobe","weakling","werewolf","whatsapp",
+  "whiskers","windmill","windsock","wireless","wrapping","wrestler","yearbook","youtuber",
+  "zeppelin","zimbabwe","zucchini","actress","airpods","airport","airship","aladdin","alcohol","algeria","allergy","america",
+  "anatomy","anchovy","ancient","android","antenna","anthill","antlers","apricot","aquaman",
+  "ashtray","assault","asterix","athlete","austria","average","avocado","bahamas","baklava",
+  "balance","balcony","balloon","bandage","bandana","barcode","barrier","bathtub","battery",
+  "bayonet","bazooka","beatbox","bedroom","bedtime","Beijing","bicycle","bigfoot","biology",
+  "biscuit","bitcoin","blanket","blender","blossom","bobsled","booklet","boulder","bouncer",
+  "bouquet","bowling","braille","Britain","brownie","buffalo","bulldog","burglar","burrito",
+  "butcher","cabbage","cabinet","camping","capsule","captain","capture","caramel","cartoon",
+  "cashier","catalog","catfish","caveman","ceiling","centaur","charger","cheetah","cheetos",
+  "chicken","chimney","circuit","climber","clothes","coaster","coconut","college","cologne",
+  "company","compass","concert","console","cookout","copycat","corrida","country","cowbell",
+  "cracker","Creeper","cricket","croatia","crowbar","crystal","cupcake","curtain","cushion",
+  "cyclist","cyclops","defense","denmark","dentist","dessert","diagram","diamond","diploma",
+  "Discord","disease","dishrag","display","diverge","divorce","dogfish","dolphin","doormat",
+  "Doritos","Dracula","droplet","drought","dungeon","earbuds","echidna","eclipse","ellipse",
+  "emerald","england","equator","evening","excited","exhaust","explode","extinct","eyebrow",
+  "eyelash","factory","failure","falafel","fallout","feather","fencing","ferrari","finland",
+  "firefly","Firefox","flicker","Florida","florist","forearm","fortune","freezer","frisbee",
+  "frogger","funeral","furious","furnace","gallery","gandalf","garbage","germany","giraffe",
+  "glacier","glasses","glitter","goddess","gondola","gorilla","gravity","grenade","griffin",
+  "gumball","haircut","hallway","hammock","hamster","hangman","harpoon","hashtag","haunted",
+  "heading","healthy","hexagon","highway","hipster","holiday","horizon","hungary","husband",
+  "iceberg","Ireland","janitor","jealous","journey","Jupiter","karaoke","kendama","ketchup",
+  "kingdom","kitchen","knuckle","ladybug","lantern","Lasagna","laundry","leather","leopard",
+  "lettuce","library","license","lighter","lilypad","loading","lobster","lottery","luggage",
+  "machete","machine","mailbox","mailman","mammoth","manatee","manhole","mansion","maracas",
+  "marimba","Marines","mascara","massage","measure","meerkat","mercury","mermaid","message",
+  "milkman","minivan","missile","monocle","monster","morning","morocco","mrbeast","mugshot",
+  "mustard","narwhal","neptune","netflix","network","notepad","nothing","nuclear","nutella",
+  "oatmeal","ocarina","octagon","octopus","offline","orchard","origami","ostrich","outside",
+  "Pacific","package","pajamas","palette","pancake","panther","parasol","parents","parking",
+  "parsley","pasture","patient","Patrick","patriot","peacock","peasant","Pegasus","pelican",
+  "penguin","perfume","pharaoh","phoenix","pianist","Picasso","pickaxe","pikachu","pinball",
+  "pitcher","plastic","plumber","plunger","Pokemon","polygon","pompeii","popcorn","popular",
+  "Porsche","pothole","pottery","poutine","present","pretzel","printer","protect","protein",
+  "protest","provoke","puberty","pudding","pumpkin","pyramid","quarter","raccoon","racecar",
+  "rainbow","ravioli","reality","receipt","referee","refresh","reptile","rhombus","rhubarb",
+  "romance","romania","rooster","samsung","samurai","sandals","sandbox","sausage","savanna",
+  "scalpel","science","scratch","seafood","seagull","seasick","seaweed","section","seizure",
+  "seltzer","shallow","shampoo","sheriff","shoebox","shooter","shotgun","Siberia","silence",
+  "skillet","skyline","snowman","soldier","Somalia","spatula","speaker","spinach","spoiler",
+  "Spotify","stadium","stapler","sticker","stomach","stubble","student","suburbs","sunburn",
+  "sunrise","surface","surgeon","sweater","swimmer","tadpole","tangled","teacher","theatre",
+  "thunder","timpani","tinfoil","titanic","toaster","toddler","toenail","toolbox","tornado",
+  "torpedo","tourist","tractor","traffic","trailer","trigger","trumpet","tsunami","tugboat",
+  "Twitter","Ukraine","ukulele","unibrow","unicorn","uniform","upgrade","vaccine","vampire",
+  "vanilla","vatican","vehicle","victory","vietnam","village","villain","vinegar","vitamin",
+  "vlogger","volcano","vulture","waluigi","warning","warrior","weather","website","wedding",
+  "western","wetsuit","whiskey","whisper","whistle","windows","wingnut","witness","workout",
+  "wrinkle","yahtzee","youtube","zipline","abacus","action","adidas","africa","airbag","alaska","almond","alpaca","amazon","anchor","anubis","archer","arctic","armpit","artery","artist","athena","athens","author","autumn","baboon","badger","bakery","ballet","bamboo","banana","banker","banner","barber","barrel","basket","batman","battle","beanie","beaver","beetle","beggar","bellow","berlin","betray","biceps","bikini","bleach","blouse","bonnet","bonsai","booger","border","bottle","bottom","bounce","bowser","boxcar","boxing","braces","branch","brazil","breath","bridge","broken","bronze","bruise","bubble","bucket","buddha","buffer","buffet","bullet","bumper","bunker","butler","butter","button","cactus","camera","canada","canary","cancer","candle","cannon","canyon","carbon","carpet","carrot","cashew","casino","castle","casual","cavern","caviar","celery","cement","center","cereal","cheeks","cheers","cheese","cherry","chives","chorus","chrome","church","cicada","cinema","circle","circus","clinic","closed","closet","cloudy","clover","cobweb","cocoon","coffee","coffin","collar","comedy","cookie","copper","corner","corpse","cotton","couple","cousin","cowboy","coyote","cradle","crayon","credit","cringe","cruise","crunch","cuckoo","cyborg","cymbal","dagger","damage","danish","darwin","degree","desert","dexter","diaper","dinner","dishes","doctor","dollar","donkey","double","dragon","drawer","driver","earwax","easter","eclair","embers","emin","engine","eraser","europe","eyelid","fabric","facade","falcon","family","farmer","father","faucet","fedora","ferret","filter","finger","flight","flower","folder","follow","forest","formal","fossil","france","fridge","friend","fungus","future","galaxy","gandhi","garage","garden","garlic","gender","genius","gentle","geyser","ginger","glider","gloves","goalie","goatee","goblin","google","gopher","grapes","gravel","grease","greece","grinch","grumpy","guitar","gutter","hacker","hammer","handle","hanger","harbor","hawaii","hazard","health","hearse","hearth","heaven","height","helium","helmet","hermes","hermit","hiking","hippie","hobbit","hockey","hoodie","hunger","hunter","hurdle","icicle","ignite","iguana","impact","impale","injury","insane","insect","inside","intern","island","israel","jacket","jaguar","jersey","jester","juggle","juicer","jungle","karate","katana","kermit","kettle","keypad","kidney","kitten","knight","kraken","ladder","laptop","lawyer","leader","lizard","locker","london","lonely","lotion","lounge","louvre","luxury","lyrics","magnet","makeup","mallet","mantis","manure","marble","marker","market","marmot","mascot","meadow","median","medusa","memory","meteor","mexico","middle","minion","minute","mirage","mirror","modern","mohawk","monday","monkey","moscow","mother","mozart","muffin","muscle","museum","musket","nachos","napkin","narnia","nascar","nature","needle","nephew","nether","nickel","noodle","norway","nugget","nutmeg","obelix","ocelot","office","omelet","online","orange","orchid","outlaw","outlet","oxygen","oyster","paddle","palace","panini","pantry","papaya","parade","parrot","pastry","paypal","peanut","pebble","pencil","pepper","period","person","pickle","picnic","pigeon","pigsty","pillar","pillow","pimple","pinata","pirate","pistol","piston","plague","plains","planet","player","pliers","pocket","poison","poland","police","pollen","poodle","popeye","portal","possum","poster","potato","potion","powder","preach","priest","prince","prison","profit","puddle","puffin","pulley","puppet","purity","purple","puzzle","python","quiche","quokka","radish","raisin","rapier","rapper","rattle","reaper","recipe","record","reddit","remote","repeat","resort","retail","rewind","ribbon","robber","roblox","rocket","rotten","rubber","russia","saddle","safari","sailor","salami","saliva","salmon","salute","saturn","scales","school","scream","screen","scroll","scythe","search","season","second","seesaw","segway","selfie","sensei","sensor","serbia","server","shades","shadow","shaggy","shield","shogun","shorts","shovel","shower","shrimp","signal","silver","skates","skinny","sledge","sleeve","slinky","sneeze","sniper","snoopy","soccer","socket","speech","sphinx","spider","spiral","sponge","sports","spread","spring","sprite","sprout","square","squash","squeal","stable","stalin","statue","stereo","stitch","stoned","street","stress","strong","studio","stylus","subway","sudoku","summer","sweden","switch","tablet","tailor","tampon","tardis","target","tarzan","tattoo","teapot","tennis","tetris","thanos","thirst","throat","throne","ticket","tickle","tiktok","tinsel","tissue","toilet","tomato","tongue","totoro","toucan","toyota","trench","tripod","trophy","tundra","tunnel","turban","turkey","turnip","turret","turtle","tuxedo","tweety","twitch","uganda","uranus","vacuum","valley","vanish","vector","venice","victim","violet","violin","vision","volume","voodoo","vortex","waffle","waiter","wallet","walnut","walrus","wasabi","wealth","weapon","weasel","weight","welder","wiggle","willow","window","winner","winter","wizard","wreath","wrench","writer","yellow","yogurt","zigzag","zipper","zombie","above","abyss","acdc","acorn","actor","adult","alarm","algae","alien","alley","alone","amber","angel","angry","anime","ankle","anvil","apple","apron","armor","arrow","attic","award","bacon","bagel","bambi","banjo","basil","beach","beans","beard","belly","below","bench","beret","bible","bidet","biker","bingo","birch","bison","black","blaze","blimp","blind","bling","block","blood","blush","board","bongo","boots","bored","boxer","braid","brain","brake","brand","brawl","bread","break","brick","bride","broom","brown","brush","build","bulge","bully","bunny","cabin","cable","camel","canal","candy","canoe","cargo","carry","catan","cello","chain","chair","chalk","chaos","check","cheek","chess","chest","child","chile","chili","chime","china","chips","cigar","clamp","clean","clerk","click","cliff","climb","cloak","clock","clogs","close","cloth","cloud","clown","coach","coast","cobra","cocoa","coder","comet","coral","corgi","couch","court","cover","crack","crane","crate","crawl","crazy","cream","creek","creep","crime","cross","crowd","crown","crumb","crust","cupid","curry","dairy","daisy","dance","darts","death","demon","devil","diary","dirty","dizzy","donut","dough","drain","drama","dream","dress","drift","drill","drink","drive","drool","drown","drunk","dryer","dumbo","dunes","dwarf","eagle","earth","egypt","elbow","elder","email","emoji","empty","error","fairy","fanta","fence","ferry","fever","field","flash","flask","float","flock","flood","floor","floss","flour","fluid","flush","flute","force","frame","fresh","fries","front","frown","fruit","fudge","funny","furry","gamer","gecko","genie","ghost","ghoul","giant","glass","globe","gloss","glove","gnome","golem","goofy","goose","gourd","grain","graph","grass","grave","gravy","greed","green","grill","grits","groan","groom","group","growl","guard","guiro","gummy","hades","hairy","happy","hatch","heart","hedge","heist","hijab","hippo","honda","honey","horse","hotel","house","hydra","hyena","idiot","india","intel","italy","japan","jeans","jello","jelly","jenga","joker","judge","juice","kayak","kazoo","kebab","kirby","kneel","knife","koala","label","ladle","laser","lasso","laugh","leash","leave","leech","lemon","lemur","level","light","lilac","limbo","liver","llama","lobby","lorry","loser","luigi","lunch","macho","mafia","magic","magma","mango","maple","march","mario","match","mayor","medal","melon","merch","messy","metal","metro","miner","model","money","moose","morty","mouse","mouth","movie","muddy","mummy","music","nepal","niece","night","ninja","noise","north","notch","novel","nurse","oasis","ocean","olive","onion","opera","orbit","organ","otter","ozone","paint","panda","pants","paper","paris","party","pasta","patio","pause","peace","peach","pearl","pecan","pedal","penne","penny","pepsi","petal","phone","photo","piano","pilot","pinky","pixel","pizza","plane","plank","plant","plate","pluto","point","poker","poppy","porch","pound","power","prawn","press","price","prism","prize","prune","pumba","punch","puppy","purse","pylon","quail","queen","queue","quiet","quill","quilt","radar","radio","ramen","razor","reeds","rifle","right","river","robin","robot","rodeo","rolex","rough","round","royal","ruins","ruler","salad","salsa","santa","satan","sauce","sauna","scale","scarf","scary","scent","scoop","score","screw","scuba","sedan","seoul","sewer","shake","shape","share","shark","shave","sheep","sheet","shelf","shell","shirt","shock","shoot","short","shout","shrek","shrew","shrub","shrug","siren","sitar","skirt","skull","skunk","skype","slave","sleep","slide","slime","slope","sloth","slump","smart","smell","smile","smoke","snack","snail","snake","socks","sonic","sound","south","space","spade","spain","spank","spark","spear","speed","spend","spicy","spill","spine","spool","spoon","spore","spray","squat","squid","staff","stage","stain","stamp","stand","start","steak","steal","steam","stick","sting","stink","stock","stone","stool","store","stork","storm","stove","straw","study","stump","sugar","sunny","sushi","swamp","swarm","sweat","swing","sword","table","tails","taser","tesla","texas","thick","thief","thigh","think","thorn","thumb","tibet","tiger","tired","title","toast","tokyo","tooth","torch","torso","totem","touch","tough","towel","tower","toxic","track","trade","trail","train","trash","trend","troll","truck","trump","trunk","tulip","tumor","twins","udder","uluru","uncle","vault","venus","video","vinyl","viola","virus","vodka","vomit","wagon","waist","wales","wario","watch","water","whale","wheat","wheel","whisk","white","whole","witch","woman","world","wound","wrist","xerox","yacht","yoshi","young","zebra","zelda","zorro","abba","acid","acne","afro","ammo","arch","army","asia","atom","audi","aunt","baby","back","bait","bald","ball","band","bank","bark","barn","base","bass","bath","beak","bean","bear","beef","beer","beet","bell","belt","bend","bill","bird","bite","blow","blue","boar","boat","body","boil","bomb","bone","book","boss","bowl","buff","bull","bump","buoy","burn","burp","bush","cafe","cage","cake","calf","call","camp","cape","card","carp","cart","case","cash","cast","cave","cell","cent","chef","chew","chin","chip","chug","city","clam","clap","claw","clay","clip","club","coal","coat","code","coin","cola","cold","comb","cone","cook","copy","cord","cork","corn","crab","crow","cuba","cube","cure","cute","dark","dawn","dead","deaf","deep","deer","dent","derp","desk","dice","diet","dill","dirt","dish","diva","dive","dock","doge","doll","dome","door","dora","dory","dots","dove","down","drag","drip","drug","drum","duck","duel","dumb","dump","dune","dusk","east","echo","edge","elmo","elsa","exam","exit","face","fall","farm","fart","fast","fern","fifa","file","finn","fire","fish","fist","fizz","flag","flat","flea","flex","flop","flow","foam","foil","fold","food","foot","fork","fort","frog","fuel","full","game","gang","gasp","gate","germ","gift","girl","give","glow","glue","goal","goat","gold","golf","gong","good","grey","grid","grin","hail","hair","half","halo","hand","hard","harp","head","heat","heel","hell","herd","hero","high","hill","hive","hold","hole","hood","hoof","hook","horn","hose","hour","howl","hulk","hurt","idea","ikea","ipad","iran","iron","itch","jail","jaws","jayz","jazz","jedi","jeep","jump","kick","kill","kilt","king","kiss","kite","kiwi","knee","knot","koto","lady","lake","lamb","lamp","lane","lava","lead","leaf","leak","leek","left","lego","legs","lens","liar","lily","lime","line","link","lion","lips","list","loaf","lock","logo","loki","look","loop","loot","loss","loud","love","luck","lung","lute","lynx","mace","maid","mail","mall","mane","many","mars","mask","math","maze","meal","mean","meat","melt","meme","menu","milk","mime","mint","mist","moat","mold","mole","monk","moon","moss","moth","mule","nail","nasa","navy","neck","nemo","neon","nerd","nest","news","nike","noob","noon","nose","note","nuke","oboe","ogre","olaf","open","orca","oreo","oval","oven","page","pain","pair","palm","park","path","pear","peas","peru","pike","pill","pine","pink","pipe","plow","plug","poke","polo","pond","pong","pony","pool","poop","poor","pope","pork","port","pray","pull","puma","pump","punk","purr","push","race","raft","rage","rail","rain","rake","ramp","rare","read","rest","rice","rich","rick","ring","riot","ripe","risk","road","robe","rock","roll","rome","roof","room","root","rope","rose","ruby","rune","safe","sale","salt","sand","save","scar","seal","seat","seed","shin","ship","shoe","shop","sick","sign","silo","sing","sink","skin","slam","sled","slip","slow","smug","snow","soap","soda","soil","song","soot","soup","spam","spin","spit","spot","spur","stab","star","stem","step","stew","stop","suck","suit","sumo","swag","swan","taco","tail","talk","tall","tank","tape","taxi","team","tear","tent","text","thin","thor","thug","tide","tile","tiny","tipi","tire","toad","tofu","tomb","tool","town","tram","trap","tray","tree","trip","tuba","tuna","turd","turn","tutu","twig","type","undo","vape","vase","veil","vein","vent","vest","vine","vise","vote","walk","wall","warm","wart","wash","wasp","wave","weak","well","west","whip","wife","wind","wine","wing","wink","wire","wish","wolf","wood","wool","work","worm","wrap","xbox","yarn","yawn","year","yeti","yoda","yoga","yolk","zeus","zoom","zuma","abs","ace","afk","age","air","amp","ant","app","arm","art","ash","atv","axe","bad","bag","bar","bat","bay","bed","bee","blt","bmw","bmx","bot","bow","box","boy","bra","bug","bun","bus","can","cap","car","cat","cod","cow","cpu","cry","cup","cut","dab","dam","day","den","dew","die","dig","dip","dna","dog","dry","dye","ear","eat","eel","egg","elf","elk","emu","end","eye","fan","fat","fig","flu","fly","fog","fox","fry","fur","gag","gap","gas","gem","god","gru","gta","gum","gun","gym","ham","hat","hen","hit","hoe","hop","hot","hug","hut","ice","imp","ink","ivy","jam","jar","jaw","job","joy","jug","keg","key","kfc","lan","lap","lid","log","low","mac","man","map","moo","mop","mow","mtv","mud","mug","nba","new","nfl","nod","nun","nut","oak","oar","oil","old","owl","pad","pan","paw","pen","pho","pie","pig","pin","pop","pot","pro","pub","pug","rag","ram","rap","rat","red","rib","rim","row","rug","run","sad","saw","sea","sew","shy","sip","sit","ski","sky","son","soy","spy","sun","suv","tax","tea","tee","tie","tip","toe","toy","tug","ufo","urn","usa","usb","van","war","wax","web","wet","wig","wok","wwe","zoo","bed bug","big ben","bow tie","hip hop","hot dog","ice age","jet ski","red sea","tea bag","tom cat","top hat","pac-man","air horn","bob ross","bus stop","car wash","egg hunt","gas mask","hay bale","jet pack","lip balm","mr. bean","new year","new york","pet food","pet shop","sea lion","sim card","six pack","ski jump","ski lift","the rock","van gogh","bed sheet","bug spray","cat woman","dr. seuss","hot sauce","ice cream","joe biden","las vegas","log flume","red panda","taj mahal","tap dance","tom brady","tom hanks","tow truck","bus driver","cab driver","can opener","dr. watson","red carpet","sea turtle","sea urchin","vin diesel","fax machine","fly swatter","gas station","ice fishing","new zealand","the beatle","bus terminal","mr. meeseeks","the avengers","hot chocolate","car dealership","air conditioner","blow up","give up","grow up","kung fu","wake up","bean bag","bunk bed","corn dog","dead sea","drum kit","game boy","hair gel","hard hat","iron man","take off","back pain","back seat","bear trap","bird bath","brad pitt","coca cola","crab cake","dish soap","drum roll","duct tape","elon musk","exit ramp","fast food","fire hose","fish bowl","fist bump","full moon","golf cart","golf club","high five","hula hoop","john cena","jump rope","junk food","king kong","lady gaga","lava lamp","life buoy","lion king","loch ness","long coat","moby dick","mona lisa","nail file","nose hair","nose ring","oven mitt","palm tree","pine cone","pine tree","rock pool","seat belt","star wars","stop sign","swim ring","taco bell","wind farm","yogi bear","zoom call","bill gates","bugs bunny","cell phone","dump truck","face paint","fake teeth","fire alarm","fire truck","fist fight","glue stick","gold chain","gold ingot","hair dryer","high heels","high score","home alone","iron giant","iron ingot","jeff bezos","katy perry","lawn mower","mont blanc","pogo stick","race track","shot glass","snow globe","snow white","suez canal","wine glass","bell pepper","butt cheeks","grim reaper","hair roller","hash browns","high school","leaf blower","moon bounce","nail polish","real estate","ring finger","sand castle","sock puppet","taxi driver","time travel","wall street","bart simpson","fast forward","fire hydrant","lisa simpson","pink panther","tape measure","tech support","time machine","rock climbing","fred flintstone","mark zuckerberg","fire extinguisher","among us","apple pie","bruce lee","cable car","civil war","fried egg","milky way","mouse pad","music box","north sea","olive oil","paper bag","peppa pig","pizza hut","porky pig","price tag","shave ice","sheep dog","stick man","stink bug","stone age","trash can","vault boy","water gun","apple seed","black belt","black hole","board game","brick wall","candy cane","cargo ship","chest hair","comic book","coral reef","daffy duck","death star","debit card","fairy tale","fanny pack","gamer girl","great wall","gummy bear","gummy worm","happy meal","james bond","magic wand","morse code","mount fuji","north pole","paper clip","piggy bank","polar bear","power bank","roast beef","robin hood","snoop dogg","south park","south pole","space suit","speed bump","steve jobs","tater tots","teddy bear","usain bolt","video game","yield sign","angry birds","bench press","candy store","coast guard","crawl space","darth vader","force field","great lakes","green beans","hello kitty","jerry mouse","magic trick","music notes","north korea","outer space","paper plane","phone booth","photo booth","photo frame","power lines","power plant","solar flare","solar panel","south korea","spray paint","storm drain","tooth fairy","toxic waste","watch tower","water cycle","water slide","water tower","white house","belly button","black friday","black pepper","brain freeze","chuck norris","grand canyon","harry potter","isaac newton","jesus christ","machu picchu","onion powder","paint roller","paper towels","sandy cheeks","solar system","south africa","spike strips","sweet potato","table tennis","tower bridge","truck driver","water bottle","water cooler","dream catcher","fried chicken","green lantern","homer simpson","honey mustard","jimmy neutron","laser pointer","marge simpson","mount everest","north america","snake charmer","south america","train station","venus flytrap","mount rushmore","prime meridian","susan wojcicki","zebra crossing","crash bandicoot", "queen elizabeth"];
+
+
+
+
+
+
+document.addEventListener("keydown", function(event) {
+    suggestions.innerHTML = "";
+    typedKeys += event.key;
+    console.log(typedKeys);
+
+   if(event.key === "Enter") {
+       typedKeys = "";
+       count = 0;
+       suggestions.innerHTML = "";
+       return;
+}
+
+   if(event.key === "Backspace") {
+       typedKeys = "";
+       count = 0;
+       suggestions.innerHTML = "";
+       return;
+}
+
+
+   for(let i = 0; i < list.length; i++) {
+
+
+       if(typedKeys != "" && list[i].startsWith(typedKeys)) {
+           const div = document.createElement("div");
+           div.textContent = list[i];
+           suggestions.append(div);
+	       let remainingWord = list[i].slice(typedKeys.length);
+	       navigator.clipboard.writeText(remainingWord);
+
+	   count ++;
+       if(count >=1) {break;}
+
+      }
+
+    }
+});
