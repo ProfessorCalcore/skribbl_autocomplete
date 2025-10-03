@@ -29,7 +29,7 @@ Copy and paste the code from the text file into your console:
    Use the keywords `'amazing'` and `'trash'` to interact with drawings.
 
 3. **Larger Text Displayed on Top:**  
-   Makes it easier to see which key is currently active.
+   Makes answers, spam warnings, vote kicks more visible!
 
 ---
 
