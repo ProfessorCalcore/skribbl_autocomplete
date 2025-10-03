@@ -1,4 +1,4 @@
-Copy and paste the code into your console via:
+Copy and paste the code in the text file into your console via:
 # RightClick -> Inspect -> Console Tab
 
 Typing 'amazing' likes a drawing
