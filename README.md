@@ -1,5 +1,5 @@
 Copy and paste the code in the text file into your console via:
-# RightClick -> Inspect -> Console Tab
+#### RightClick -> Inspect -> Console Tab
 
 Typing 'amazing' likes a drawing
 Typing 'trash' dislikes a drawing
