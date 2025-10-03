@@ -1,14 +1,26 @@
-Copy and paste the code in the text file into your console via:
-#### RightClick -> Inspect -> Console Tab
+# Skribbl.io Shortcut Script Guide
 
-Typing 'amazing' likes a drawing
-Typing 'trash' dislikes a drawing
+Copy and paste the code from the text file into your console:
 
-Anyone can force you to like or dislike a drawing if they know the key terms!
+#### Steps:
+1. Right-click anywhere on the page.
+2. Select **Inspect**.
+3. Go to the **Console** tab.
+4. Paste the code and press Enter.
 
-# Features include:
-1) Word suggestions: Enables quick typing by allowing you to paste the remainder of the word. For example if you type 'xy' then the word 'xylophone' will pop up. This copies 'lophone' to the clipboard. Then ofc you just do ctrl + v to paste it in. By using a third party keyboard shortcup remapper such as AutoHotkey this method is much more effective!
+---
 
-3) Like/Dislike Commands
+### How it Works
+- Typing `'amazing'` will **like** a drawing.  
+- Typing `'trash'` will **dislike** a drawing.  
 
-4) Larger text displayed on top!
+> ⚠ Note: Anyone who knows these key terms could trigger your own likes or dislikes. Use responsibly!
+
+---
+
+### Features
+1. **Word Suggestions:**  
+   Quickly complete words by pasting the remainder.  
+   - Example: If you type `'xy'`, the word `'xylophone'` will pop up.  
+   - The script copies `'lophone'` to your clipboard. Just press **Ctrl + V** to paste.  
+   - For faster input, you can use a third-party keyboard
