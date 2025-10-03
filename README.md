@@ -14,7 +14,7 @@ Copy and paste the code from the text file into your console:
 - Typing `'amazing'` will **like** a drawing.  
 - Typing `'trash'` will **dislike** a drawing.  
 
-> ⚠ Note: Anyone who knows these key terms could trigger your own likes or dislikes. Use responsibly!
+> ⚠ Note: Anyone who knows these key terms could trigger likes or dislikes. Use responsibly!
 
 ---
 
@@ -23,4 +23,14 @@ Copy and paste the code from the text file into your console:
    Quickly complete words by pasting the remainder.  
    - Example: If you type `'xy'`, the word `'xylophone'` will pop up.  
    - The script copies `'lophone'` to your clipboard. Just press **Ctrl + V** to paste.  
-   - For faster input, you can use a third-party keyboard
+   - For faster input, you can use a third-party keyboard shortcut remapper like **AutoHotkey**.
+
+2. **Like/Dislike Commands:**  
+   Use the keywords `'amazing'` and `'trash'` to interact with drawings.
+
+3. **Larger Text Displayed on Top:**  
+   Makes it easier to see which key is currently active.
+
+---
+
+Enjoy faster typing and smarter shortcuts in Skribbl.io!
